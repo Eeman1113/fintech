@@ -1,35 +1,42 @@
+# Fintech
 
-Fintech
 This repository contains code for a Llama-based conversational AI model, specifically designed for generating text based on prompts. The model is trained on a dataset related to financial technology (fintech) and is capable of generating text that is relevant to this domain.
 
-Requirements
-Python 3.7 or higher
-llama_cpp library (install using pip install llama_cpp)
-GPU acceleration (optional, but recommended for faster inference)
-Usage
-Clone the repository:
+## Requirements
 
-bash
-Copy code
-git clone https://github.com/Eeman1113/fintech.git
-Install the required dependencies:
+- Python 3.7 or higher
+- `llama_cpp` library (install using `pip install llama_cpp`)
+- GPU acceleration (optional, but recommended for faster inference)
 
-bash
-Copy code
-pip install -r requirements.txt
-Download the pre-trained model file (phi-2.Q4_K_S.gguf) from here and place it in the models directory.
+## Usage
 
-Run the main.py script:
+1. Clone the repository:
 
-bash
-Copy code
-python main.py
-Follow the instructions in the console to interact with the model.
+   ```bash
+   git clone https://github.com/Eeman1113/fintech.git
+   ```
 
-Examples
-Simple Inference
-python
-Copy code
+2. Install the required dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Download the pre-trained model file (`phi-2.Q4_K_S.gguf`) from [here](https://example.com/model) and place it in the `models` directory.
+
+4. Run the `main.py` script:
+
+   ```bash
+   python main.py
+   ```
+
+5. Follow the instructions in the console to interact with the model.
+
+## Examples
+
+### Simple Inference
+
+```python
 from llama_cpp import Llama
 
 llm = Llama(
@@ -45,9 +52,11 @@ output = llm(
     stop=["</s>"],
     echo=True
 )
-Chat Completion API
-python
-Copy code
+```
+
+### Chat Completion API
+
+```python
 llm = Llama(model_path="./phi-2.Q4_K_S.gguf", chat_format="llama-2")
 
 response = llm.create_chat_completion(
@@ -61,8 +70,17 @@ response = llm.create_chat_completion(
 )
 
 print(response['choices'][0]['message']['content'])
-Contributing
+```
+
+## Contributing
+
 Contributions are welcome! Please open an issue or submit a pull request with any improvements or bug fixes.
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- The Llama team for providing the `llama_cpp` library and pre-trained models.
+- The financial technology community for providing the data used to train the model.
